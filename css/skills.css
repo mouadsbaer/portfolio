@@ -1,0 +1,130 @@
+/* Skills Section Styles */
+
+.skills-section {
+    background-color: var(--bg-color);
+    padding: 4rem 0;
+}
+
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-blue);
+    border-radius: 2px;
+}
+
+.skill-bar {
+    margin-bottom: 1.5rem;
+    width: 80%;
+}
+
+.skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.skill-bar .bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar .bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+    border-radius: 10px;
+    position: relative;
+    width: 0;
+    /* Animated via JS or CSS animation */
+    transition: width 1s ease-in-out;
+}
+
+/* Specific widths for demonstration, in production JS handles this or inline styles */
+.skill-bar .bar span.html {
+    width: 95%;
+}
+
+.skill-bar .bar span.css {
+    width: 90%;
+}
+
+.skill-bar .bar span.js {
+    width: 85%;
+}
+
+.skill-bar .bar span.react {
+    width: 80%;
+}
+
+.skill-bar .bar span.figma {
+    width: 90%;
+}
+
+.skill-bar .bar span.adobe {
+    width: 85%;
+}
+
+/* Animation on scroll can be added later */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+.skill-bar .bar span {
+    animation: fillBar 1.5s ease-out forwards;
+}
+.skills-section .skills_pic{
+    width: 130%;
+}
+.skills-section .skills_pic img{
+    width: 120%;
+}
+.flex-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 300px;
+    padding: 0 50px;
+}
+.skill-category{
+    width: 100%;
+}
+.skill-category .skills_intro{
+    width: 100%;
+    color: var(--text-secondary);
+}
+.skill-bar i{
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+}
+.skills_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
