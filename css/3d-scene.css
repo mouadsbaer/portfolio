@@ -1,0 +1,35 @@
+/* 3D Scene Canvas Styling */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10; /* Ensure it stays behind all content */
+    pointer-events: none; /* Let clicking pass through to the webpage */
+    background: radial-gradient(circle at center, #0B101E 0%, #03060C 100%);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Adjust general body/main layers to allow 3D canvas visibility */
+body, html {
+    background-color: transparent !important;
+}
+
+.main-content {
+    background-color: transparent !important;
+}
+
+.section {
+    background-color: transparent !important;
+}
+
+/* Add slight glassmorphism to hero containers if needed to stay very readable over the 3D canvas */
+
+
+.hero-section {
+    /* If the hero section originally had a solid background, we make it transparent */
+    background: transparent !important;
+}

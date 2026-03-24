@@ -1,17 +1,22 @@
 /* Portfolio Section Styles */
 
 .portfolio-section {
-    background-color: var(--bg-color);
+    background-color: transparent;
     padding: 4rem 0;
 }
 
 .portfolio-grid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-   
-    flex-wrap: wrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 2rem 0; /* Removed side padding since container has it now */
+    scrollbar-width: none; /* Hide for Firefox */
+    -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-grid::-webkit-scrollbar {
+    display: none; /* Hide for Chrome/Safari */
 }
 
 .portfolio-card {
@@ -22,7 +27,8 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: var(--transition);
     position: relative;
-    width: 31%;
+    flex: 0 0 350px; /* Fixed width for horizontal scrolling */
+    scroll-snap-align: center;
 }
 
 .portfolio-card:hover {
@@ -79,6 +85,56 @@
 .btn-sm:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Portfolio Navigation */
+.portfolio-container {
+    position: relative;
+    padding: 0 60px; /* Space for the side buttons */
+}
+
+.portfolio-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Let clicks pass through except for buttons */
+    z-index: 10;
+}
+
+.scroll-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(15px);
+    pointer-events: auto; /* Enable clicks on buttons */
+}
+
+.scroll-btn.prev {
+    margin-left: -10px;
+}
+
+.scroll-btn.next {
+    margin-right: -10px;
+}
+
+.scroll-btn:hover {
+    background: linear-gradient(45deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    border-color: transparent;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
 /* Responsive */

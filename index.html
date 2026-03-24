@@ -26,12 +26,21 @@
     <link rel="stylesheet" href="css/languages.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/3d-scene.css">
+    
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <div class="atout1">
-        <img src="assets/images/atout1.png" alt="">
-    </div>
+    <canvas id="bg-canvas"></canvas>
     <div class="logo">
         <img src="assets/images/ms-logo-removebg-preview.png" alt="">
     </div>
@@ -242,7 +251,11 @@
         <section id="portfolio" class="section portfolio-section">
             <h2 class="section-title">My Projects</h2>
             <div class="container portfolio-container">
-                <div class="portfolio-grid">
+                <div class="portfolio-nav">
+                    <button class="scroll-btn prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="scroll-btn next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="portfolio-grid" id="portfolioGrid">
                     <!-- Project 1 -->
                     <div class="portfolio-card">
                         <div class="portfolio-img">
@@ -275,6 +288,28 @@
                             <h3>Internal banking web application</h3>
                             <p>Enables employees to manage clients, accounts, and transactions through a secure
                                 interface.</p>
+                            <a href="#" class="btn btn-sm">View Project</a>
+                        </div>
+                    </div>
+                    <!-- Project 4 (Duplicate for scroll demo) -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="assets/images/projet1.png" alt="Project 4">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>E-commerce Dashboard</h3>
+                            <p>A comprehensive statistics dashboard for managing sales and inventory.</p>
+                            <a href="#" class="btn btn-sm">View Project</a>
+                        </div>
+                    </div>
+                    <!-- Project 5 (Duplicate for scroll demo) -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="assets/images/projet2.png" alt="Project 5">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Fitness Tracker App</h3>
+                            <p>Mobile-first application to track workouts and nutrition with real-time data.</p>
                             <a href="#" class="btn btn-sm">View Project</a>
                         </div>
                     </div>
@@ -451,6 +486,7 @@
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script type="module" src="js/scene.js"></script>
 </body>
 
 </html>

@@ -92,11 +92,11 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all sections for fade-in effect
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.portfolio-card, .timeline-item, .language-card, .skill-category');
+    const cards = document.querySelectorAll('.portfolio-card, .timeline-item, .language-card, .skill-category, .info-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        card.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
         observer.observe(card);
     });
 });
@@ -189,4 +189,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(element);
     });
+});
+// Horizontal Scroll for Projects
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('portfolioGrid');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (grid && prevBtn && nextBtn) {
+        const scrollAmount = 400;
+
+        nextBtn.addEventListener('click', () => {
+            grid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            grid.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
